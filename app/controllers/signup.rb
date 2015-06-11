@@ -14,12 +14,12 @@ post '/signup' do
         username: params[:username],
         email: params[:email],
         password: params[:password])
+        new_user.password = params[:password]
       if new_user.save
         session[:user_id] = new_user.id
         redirect to '/'
       else
         @signup_errors = new_user.errors.messages
-
         erb :signup
       end
   else

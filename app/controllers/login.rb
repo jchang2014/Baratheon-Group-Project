@@ -6,7 +6,6 @@ end
 
 get '/' do
   if session[:user_id]
-    @username = session[:user_id]
     erb :logged_in
   else
     erb :login
@@ -26,6 +25,6 @@ end
 
 
 get '/logout' do
-  session.clear
+  session[:user_id] = nil
   redirect '/'
 end
