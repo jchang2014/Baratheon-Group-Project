@@ -25,7 +25,9 @@ border-bottom: 2px solid #FFFFFF;
 }
 
 .tweet_content {
-  width: 590px;
+  width: 400px;
+  height: 100px;
+  margin: 2em;
 }
 
 #new_tweet {
