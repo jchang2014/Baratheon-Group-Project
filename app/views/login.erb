@@ -1,6 +1,8 @@
 <div class="container">
   <h1>Welcome to Lil' Twitter!</h1>
-
+  <% if @error %>
+    <p class="error"><%= @error %></p>
+  <% end %>
   <form action="/" method="post">
     <input type="text" placeholder="Username" name="username">
     <input type="password" placeholder="Password" name="password">

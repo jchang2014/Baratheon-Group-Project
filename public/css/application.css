@@ -9,3 +9,10 @@ input {
   display: block;
   margin: 10px 0px;
 }
+
+.error {
+  font-weight: bold;
+  color: dark-red;
+  background-color: #CCCCCC;
+  padding: 20px;
+}
