@@ -1,6 +1,7 @@
 enable :sessions
 
 get '/signup' do
+  @newuser = User.new()
   if session[:username]
     redirect to '/'
   else
@@ -9,8 +10,9 @@ get '/signup' do
 end
 
 post '/signup' do
+  #@newuser.errors
   if params[:password] == params[:verify_password]
-    new_user = User.create!(username: params[:username], email: params[:email], password: params[:password])
+      new_user = User.create!(username: params[:username], email: params[:email], password: params[:password])
       session[:username] = new_user.username
       session[:user_id] = new_user.id
       redirect to '/'
