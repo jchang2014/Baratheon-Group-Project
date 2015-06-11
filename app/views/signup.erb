@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Sign up for Lil' Twitter!</h1>
+  <% if @error %>
+    <p class="error"><%= @error %></p>
+  <% end %>
+  <form action="/signup" method="post">
+    <input type="text" placeholder="Username" name="username">
+    <input type="text" placeholder="Email" name="email">
+    <input type="password" placeholder="Password" name="password">
+    <input type="password" placeholder="Verify Password" name="verify_password">
+    <input type="submit" value="Signup">
+  </form>
+  <a href="/">Sign in instead</a>
+</div>
