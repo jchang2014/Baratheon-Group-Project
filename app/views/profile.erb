@@ -1,0 +1,25 @@
+<!--
+username
+created_at
+number of tweets
+number of following
+no.follwers -->
+
+<div> <%= @user.username %>
+ <%= @user.created_at %>
+</div>
+<!-- <a href=""></a> -->
+
+<!-- if current_user.follows.include(@user.id) -->
+  <!-- erb :following #method to unfollow -->
+  <form action="/unfollow/<%= @user.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <!-- #delete row from followers table -->
+    <input type="submit" value="Unfollow">
+  </form>
+<!-- else -->
+  <!-- can follow -->
+  <form action="/follow/<%= @user.id %>" method="post">
+    <input type="submit" value="Follow">
+  </form>
+
