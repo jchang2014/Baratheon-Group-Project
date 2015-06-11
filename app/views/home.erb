@@ -1,17 +1,15 @@
 <div class="container">
-  <h1>This is your home feed, <%=@name%>!</h1>
+  <h1>This is your home feed, <%=@username%>!</h1>
 
   <form id="new_tweet" action="/home" method="post">
-    <label for="tweet">Your tweet</label>
-    <textarea name="content" placeholder="New tweet here&hellip;"></textarea>
+    <label for="tweet">Send a tweet:<br></label>
+    <textarea class='tweet_content' name="content" placeholder="New tweet here&hellip;"></textarea>
     <input type="submit" value="Submit">
   </form>
-
+  <hr>
   <div class="tweet-list">
-    <ul>
-      <%@  %>
-      <li></li>
-    </ul>
+    <%=@div_string  %>
+
   </div>
 
 
