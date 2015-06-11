@@ -1,0 +1,18 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+input {
+  display: block;
+  margin: 10px 0px;
+}
+
+.error {
+  font-weight: bold;
+  color: #c0392b;
+  background-color: #CCCCCC;
+  padding: 20px;
+}
