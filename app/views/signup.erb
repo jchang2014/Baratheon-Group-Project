@@ -3,6 +3,11 @@
   <% if @error %>
     <p class="error"><%= @error %></p>
   <% end %>
+  <% if @signup_errors %>
+    <% @signup_errors.each do |error,message| %>
+      <p class="error"><%= "#{error.capitalize} #{message.first}" %></p>
+      <% end %>
+  <% end %>
   <form action="/signup" method="post">
     <input type="text" placeholder="Username" name="username">
     <input type="text" placeholder="Email" name="email">

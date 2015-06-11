@@ -18,7 +18,8 @@ post '/signup' do
         session[:user_id] = new_user.id
         redirect to '/'
       else
-        @error = new_user.errors
+        @signup_errors = new_user.errors.messages
+
         erb :signup
       end
   else
