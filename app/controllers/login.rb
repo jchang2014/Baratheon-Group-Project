@@ -25,6 +25,7 @@ post '/' do
   end
 end
 
+
 get '/logout' do
   session.clear
   redirect '/'
