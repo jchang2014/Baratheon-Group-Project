@@ -12,7 +12,7 @@ input {
 
 .error {
   font-weight: bold;
-  color: dark-red;
+  color: #c0392b;
   background-color: #CCCCCC;
   padding: 20px;
 }
