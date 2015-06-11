@@ -8,18 +8,27 @@ no.follwers -->
 <div> <%= @user.username %>
  <%= @user.created_at %>
 </div>
+
 <!-- <a href=""></a> -->
 
 <!-- if current_user.follows.include(@user.id) -->
   <!-- erb :following #method to unfollow -->
   <form action="/unfollow/<%= @user.id %>" method="post">
     <input type="hidden" name="_method" value="delete">
-    <!-- #delete row from followers table -->
     <input type="submit" value="Unfollow">
+    #delete row from followers table
   </form>
 <!-- else -->
+
   <!-- can follow -->
   <form action="/follow/<%= @user.id %>" method="post">
     <input type="submit" value="Follow">
   </form>
 
+<div>
+  <ul>
+  <% @usertweets.each do |tweet| %>
+  <li><%= tweet %></li>
+  <% end %>
+  </ul>
+</div>
