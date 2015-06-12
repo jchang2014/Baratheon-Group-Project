@@ -1,6 +1,6 @@
 <div class="container">
   <h1>This is your home feed, <%=@username%>!</h1>
-
+  <%= erb :"partials/search" %>
   <form id="new_tweet" action="/tweets" method="post">
     <label for="tweet">Send a tweet:<br></label>
     <textarea class='tweet_content' name="content" placeholder="New tweet here&hellip;"></textarea>

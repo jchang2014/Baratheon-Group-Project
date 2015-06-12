@@ -12,6 +12,23 @@ post '/follow/:username' do
   follow_new_user
 end
 
+post '/search' do
+  find_user = User.where(:username => params[:username]).first
+  # if params[:username] == something activerord
+  if find_user
+    redirect "/profile/#{find_user.username}"
+  else
+    @current_user = User.find(session[:user_id])
+    @search_error = "User not found"
+    # redirect "/profile/#{current_user.username}"
+    erb :'/partials/search'
+  end
+    # reroute the person to /profile/username
+  # else (not found)
+    # give an error of not found?
+
+end
+
 
 delete '/unfollow/:username' do
   following = User.where(username: params[:username]).first
