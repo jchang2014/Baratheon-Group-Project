@@ -1,3 +1,10 @@
-<div class='tweet_item'> <strong><%=name%></strong><br>
-  <%= content %> </div>
+<div class='tweet_item'>
+  <div class="row">
+    <div class="left"><a href="/profile/<%=name%>"><strong><%=name%></strong></a></div>
+    <section class="right"><%=updated_at%></section><br>
+  </div>
+  <div id = "tweet-line-two" class="row">
+  <%= content %>
+  </div>
+</div>
 

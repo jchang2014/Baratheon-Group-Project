@@ -16,14 +16,6 @@
 
 
 
-
-  <form id="new_tweet" action="/tweets" method="post">
-    <label for="tweet">Send a tweet:<br></label>
-    <textarea class='tweet_content' name="content" placeholder="New tweet here&hellip;"></textarea>
-    <input type="submit" value="Submit">
-  </form>
-  <hr>
-
   <% @tweets = User.where(username: params[:username]).first.tweets %>
   <%= erb :'partials/tweetlist', :layout => false, :locals => {:tweets => @tweets }%>
 
