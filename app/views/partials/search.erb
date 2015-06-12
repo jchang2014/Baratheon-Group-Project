@@ -1,0 +1,11 @@
+
+<% if @search_error  %>
+  <p class="error"><%= @search_error %></p>
+  <a href="/profile/<%= @current_user.username %>">Return to my profile</a>
+
+<% end %>
+
+<form action="/search" method="post">
+  <input type="text" name="username" placeholder="Enter username"/>
+  <input type="submit" value="Search"/>
+</form>

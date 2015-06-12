@@ -1,6 +1,7 @@
 
 <div class="container">
   <h1><%=@user.username%>'s profile</h1>
+  <h4>Followers <%= @followers %>    |    Following <%= @following %></h4>
   <!-- #unfollow button -->
   <% if @follows %>
     <form action="/unfollow/<%= params[:username]%>" method="post">
@@ -15,6 +16,8 @@
   <% end  %>
 
 
+<!-- search field -->
+<%= erb :"partials/search" %>
 
 
   <form id="new_tweet" action="/tweets" method="post">
@@ -25,6 +28,7 @@
   <hr>
 
   <% @tweets = User.where(username: params[:username]).first.tweets %>
+  <% sort_tweets(@tweets) %>
   <%= erb :'partials/tweetlist', :layout => false, :locals => {:tweets => @tweets }%>
 
   <a href="/logout">Logout</a>
