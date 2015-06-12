@@ -1,7 +1,7 @@
 <div class="container">
   <h1>This is your home feed, <%=@username%>!</h1>
 
-  <form id="new_tweet" action="/home" method="post">
+  <form id="new_tweet" action="/tweets" method="post">
     <label for="tweet">Send a tweet:<br></label>
     <textarea class='tweet_content' name="content" placeholder="New tweet here&hellip;"></textarea>
     <input type="submit" value="Submit">
@@ -10,6 +10,7 @@
  <%= erb :'partials/tweetlist', :layout => false, :locals => {:tweets => @tweets }%>
 
 
+  <a href="/logout">Logout</a>
 
 
 

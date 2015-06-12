@@ -6,7 +6,10 @@ end
 
 get '/' do
   if session[:user_id]
-    erb :logged_in
+    userid = session[:user_id]
+    @username = User.find(userid).username
+    @tweets = Tweet.all
+    erb :home
   else
     erb :login
   end
