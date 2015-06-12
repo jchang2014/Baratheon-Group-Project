@@ -1,0 +1,5 @@
+<div class="tweet-list">
+      <% tweets.each do |tweet| %>
+        <%= erb :'partials/tweet', :layout => false, :locals => { :name => tweet.user.username, :content => tweet.content} %>
+      <% end %>
+</div>

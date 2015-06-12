@@ -7,10 +7,10 @@
     <input type="submit" value="Submit">
   </form>
   <hr>
-  <div class="tweet-list">
-    <%=@div_string  %>
+ <%= erb :'partials/tweetlist', :layout => false, :locals => {:tweets => @tweets }%>
 
-  </div>
+
+
 
 
 </div>

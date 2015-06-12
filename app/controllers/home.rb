@@ -4,19 +4,9 @@ get '/home' do
   if session[:username]
     @username = session[:username]
   else
-    @username = 'Ralph'
+    redirect to '/signup'
   end
-  tweets = Tweet.all
-  div_items = []
-  tweets.each do |tweet|
-    tweeter_name = tweet.user.username
-    content = tweet.content
-    div_item = "<div class='tweet_item'> <strong>#{tweeter_name} </strong><br> \
-                #{content} </div>"
-    div_items << div_item
-  end
-  @div_string = div_items.join(" ")
-  puts @div_string, "--------------------------------------------------"
+  @tweets = Tweet.all
   erb :home
 end
 
@@ -28,3 +18,10 @@ put '/home' do
 
 end
 
+def get_tweets_from_those_im_following (user)
+  those_im_following = user.followings
+  those_im_following.each do |followed|
+      interesting << @tweets.where(user_id: followed.id)
+    end
+  end
+end
