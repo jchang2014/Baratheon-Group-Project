@@ -9,6 +9,7 @@ get '/' do
     user = User.find(session[:user_id])
     @username = user.username
     @tweets = get_tweets_from_those_im_following(user)
+    sort_tweets(@tweets)
     erb :home
   else
     erb :login

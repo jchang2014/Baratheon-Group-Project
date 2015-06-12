@@ -1,6 +1,10 @@
 <div class="container">
   <h1>This is your home feed, <%=@username%>!</h1>
 
+  <% get_counts %>
+  <h4>Followers <%= @followers %>    |    Following <%= @following %></h4>
+  <%= erb :"partials/search" %>
+
   <% if @tweet_error %>
     <p class="error"><%= @tweet_error %></p>
   <% end %>
