@@ -1,6 +1,7 @@
 
 <div class="container">
   <h1><%=@user.username%>'s profile</h1>
+  <h4>Followers <%= @followers %>    |    Following <%= @following %></h4>
   <!-- #unfollow button -->
   <% if @follows %>
     <form action="/unfollow/<%= params[:username]%>" method="post">

@@ -29,6 +29,19 @@ helpers do
     @tweets = tweet_array.sort { |tweet1, tweet2| tweet2.created_at <=> tweet1.created_at }
   end
 
+  def get_counts
+    if @user
+      @followers = @user.followers.count
+      @following = @user.followings.count
+    else
+      @username = User.find(session[:user_id])
+      @followers = @username.followers.count
+      @following = @username.followings.count
+    end
+
+  end
+
+
 
 
 end

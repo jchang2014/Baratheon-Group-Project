@@ -3,6 +3,7 @@ get '/profile/:username' do #visit a profile
   @user = User.where(username: params[:username]).first
   @usertweets = @user.tweets
   determine_follow_status
+  get_counts
   erb :profile_view
 end
 
