@@ -1,5 +1,5 @@
 
-get '/profile/:username' do #visit a profile
+get '/:username' do #visit a profile
   @user = User.find_by(username: params[:username])
   @usertweets = ["tweet1", "tweet2", "tweet3"]
   erb :profile_view
@@ -25,3 +25,8 @@ end
 #user-id   |   following-id
 # 1                 4
 #
+
+
+####### how to get the tweets! (feed is a list of all users following current_user)############
+# feed.each{|person| person.tweets.each{|tweet| p tweet.content}}
+##################################
