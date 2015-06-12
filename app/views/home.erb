@@ -7,12 +7,10 @@
     <input type="submit" value="Submit">
   </form>
   <hr>
+ <%= erb :'partials/tweetlist', :layout => false, :locals => {:tweets => @tweets }%>
 
-  <div class="tweet-list">
-    <% @tweets.each do |tweet| %>
-      <%=erb :'partials/tweet', :layout => false, :locals => { :tweet => tweet} %>
-    <% end %>
-  </div>
+
+
 
 
 </div>
