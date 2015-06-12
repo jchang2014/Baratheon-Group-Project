@@ -6,9 +6,9 @@ end
 
 get '/' do
   if session[:user_id]
-    userid = session[:user_id]
-    @username = User.find(userid).username
-    @tweets = Tweet.all
+    user = User.find(session[:user_id])
+    @username = user.username
+    @tweets = get_tweets_from_those_im_following(user)
     erb :home
   else
     erb :login

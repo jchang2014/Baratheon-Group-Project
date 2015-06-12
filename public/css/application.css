@@ -33,3 +33,10 @@ border-bottom: 2px solid #FFFFFF;
 #new_tweet {
   width: 700px;
 }
+
+#phoenix {
+  position: absolute;
+  top: 35px;
+  left: 950px;
+
+}
