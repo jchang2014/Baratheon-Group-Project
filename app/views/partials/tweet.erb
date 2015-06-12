@@ -8,7 +8,8 @@
   </div>
   <% @id = id %>
   <% @retweet = Tweet.where(id: @id).first %>
-  <!-- <a href="/tweet">Retweet</a> -->
+
+  <!-- #hidden form that populates with retweet data -->
 
   <form id="new_tweet" action="/retweet" method="post">
     <input type="hidden" name="content" value="<%= @retweet.content %>" />
