@@ -23,5 +23,4 @@ def get_tweets_from_those_im_following (user)
   those_im_following.each do |followed|
       interesting << @tweets.where(user_id: followed.id)
     end
-  end
 end

@@ -28,3 +28,9 @@ get '/logout' do
   session[:user_id] = nil
   redirect '/'
 end
+
+get '/profile/:username' do #visit a profile
+  @user = User.find_by(username: params[:username])
+  @usertweets = ["tweet1", "tweet2", "tweet3"]
+  erb :profile_view
+end
