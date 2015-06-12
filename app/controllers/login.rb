@@ -6,11 +6,10 @@ end
 
 get '/' do
   if session[:user_id]
-    userid = session[:user_id]
-    @username = User.find(userid).username
-    @tweets = Tweet.all
-    #sorting method goes here
-    sort_tweets(@tweets)
+    user = User.find(session[:user_id])
+    @username = user.username
+    @tweets = get_tweets_from_those_im_following(user)
+   sort_tweets(@tweets)
     erb :home
   else
     erb :login

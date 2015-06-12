@@ -33,3 +33,34 @@ border-bottom: 2px solid #FFFFFF;
 #new_tweet {
   width: 700px;
 }
+
+#phoenix {
+  position: absolute;
+  top: 35px;
+  left: 1050px;
+}
+
+.row {
+  padding-bottom:10px;
+}
+
+.left {
+  text-align: left;
+  float: left;
+  display:inline-block;
+}
+.right {
+  /*text-align: right;*/
+  font-style: italic;
+  float: right;
+  display:inline-block;
+}
+#tweet-line-two {
+padding-left: 1cm;
+
+}
+
+
+
+
+
