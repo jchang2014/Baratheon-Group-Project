@@ -1,5 +1,9 @@
 
-
+get '/profile/:username' do #visit a profile
+  @user = User.find_by(username: params[:username])
+  @usertweets = ["tweet1", "tweet2", "tweet3"]
+  erb :profile_view
+end
 
 # post '/follow/:id' do #follow a profile
 #   current_user = session[:user_id]
