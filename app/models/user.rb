@@ -5,7 +5,9 @@ class User < ActiveRecord::Base
 
   has_many :tweets
 
-  #def authenticate?(username, email, password)
-    #  user && (user.password == params[:password])
-  # end
+  has_many :follower_relationships, :foreign_key => 'follower_id', :class_name => 'Relationship'
+  has_many :following_relationships, :foreign_key => 'following_id', :class_name => 'Relationship'
+  has_many :followers, :through => :following_relationships
+  has_many :followings, :through => :follower_relationships
+
 end
