@@ -9,6 +9,8 @@ get '/' do
     userid = session[:user_id]
     @username = User.find(userid).username
     @tweets = Tweet.all
+    #sorting method goes here
+    sort_tweets(@tweets)
     erb :home
   else
     erb :login
