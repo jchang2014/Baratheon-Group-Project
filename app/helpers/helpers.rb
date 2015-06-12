@@ -25,6 +25,10 @@ helpers do
     redirect to("/profile/#{@user.username}")
   end
 
+  def sort_tweets(tweet_array)
+    @tweets = tweet_array.sort { |tweet1, tweet2| tweet2.created_at <=> tweet1.created_at }
+  end
+
 
 
 end
