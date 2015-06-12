@@ -1,0 +1,5 @@
+<% @tweets.each do |article| %>
+
+<%= erb :'partials/_article', :layout => false, :locals => { :article => article } %>
+
+<% end %>

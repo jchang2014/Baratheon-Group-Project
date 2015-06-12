@@ -1,0 +1,66 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+
+input {
+  display: block;
+  margin: 10px 0px;
+}
+
+
+.error {
+  font-weight: bold;
+  color: #c0392b;
+  background-color: #CCCCCC;
+  padding: 20px;
+}
+
+.tweet_item {
+padding: 1em;
+background-color: #dddddd;
+border-bottom: 2px solid #FFFFFF;
+}
+
+.tweet_content {
+  width: 400px;
+  height: 100px;
+  margin: 2em;
+}
+
+#new_tweet {
+  width: 700px;
+}
+
+#phoenix {
+  position: absolute;
+  top: 35px;
+  left: 1050px;
+}
+
+.row {
+  padding-bottom:10px;
+}
+
+.left {
+  text-align: left;
+  float: left;
+  display:inline-block;
+}
+.right {
+  /*text-align: right;*/
+  font-style: italic;
+  float: right;
+  display:inline-block;
+}
+#tweet-line-two {
+padding-left: 1cm;
+
+}
+
+
+
+
+

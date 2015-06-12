@@ -1,0 +1,24 @@
+
+<div class="container">
+  <h1><%=@user.username%>'s profile</h1>
+  <!-- #unfollow button -->
+  <% if @follows %>
+    <form action="/unfollow/<%= params[:username]%>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Unfollow">
+  </form>
+  <% else %>
+  <!-- #follow -->
+  <form action="/follow/<%= @user.username %>" method="post">
+      <input type="submit" value="Follow">
+    </form>
+  <% end  %>
+
+
+
+  <% @tweets = User.where(username: params[:username]).first.tweets %>
+  <%= erb :'partials/tweetlist', :layout => false, :locals => {:tweets => @tweets }%>
+
+  <a href="/logout">Logout</a>
+
+</div>
