@@ -25,3 +25,8 @@ end
 #user-id   |   following-id
 # 1                 4
 #
+
+
+####### how to get the tweets! (feed is a list of all users following current_user)############
+# feed.each{|person| person.tweets.each{|tweet| p tweet.content}}
+##################################
