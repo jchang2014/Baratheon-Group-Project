@@ -1,8 +1,8 @@
 enable :sessions
 
 get '/home' do
-  if session[:username]
-    @username = session[:username]
+  if session[:user_id]
+    @username = session[:user_id]
   else
     redirect to '/signup'
   end

@@ -1,8 +1,7 @@
 enable :sessions
 
 get '/signup' do
-  @newuser = User.new()
-  if session[:username]
+  if session[:user_id]
     redirect to '/'
   else
     erb :signup
@@ -10,12 +9,19 @@ get '/signup' do
 end
 
 post '/signup' do
-  #@newuser.errors
   if params[:password] == params[:verify_password]
-      new_user = User.create!(username: params[:username], email: params[:email], password: params[:password])
-      session[:username] = new_user.username
-      session[:user_id] = new_user.id
-      redirect to '/'
+      new_user = User.new(
+        username: params[:username],
+        email: params[:email],
+        password: params[:password])
+        new_user.password = params[:password]
+      if new_user.save
+        session[:user_id] = new_user.id
+        redirect to '/'
+      else
+        @signup_errors = new_user.errors.messages
+        erb :signup
+      end
   else
     @error = "Your passwords don't match."
     erb :signup
