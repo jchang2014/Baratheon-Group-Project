@@ -25,6 +25,7 @@
   <hr>
 
   <% @tweets = User.where(username: params[:username]).first.tweets %>
+  <% sort_tweets(@tweets) %>
   <%= erb :'partials/tweetlist', :layout => false, :locals => {:tweets => @tweets }%>
 
   <a href="/logout">Logout</a>
