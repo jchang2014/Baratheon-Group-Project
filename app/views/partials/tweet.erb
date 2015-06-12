@@ -6,5 +6,15 @@
   <div id = "tweet-line-two" class="row">
   <%= content %>
   </div>
+  <% @id = id %>
+  <% @retweet = Tweet.where(id: @id).first %>
+  <!-- <a href="/tweet">Retweet</a> -->
+
+  <form id="new_tweet" action="/retweet" method="post">
+    <input type="hidden" name="content" value="<%= @retweet.content %>" />
+    <input type="hidden" name="original_user" value = "<%= @retweet.user.username %>" />
+    <input type="submit" value="Retweet">
+  </form>
+
 </div>
 
